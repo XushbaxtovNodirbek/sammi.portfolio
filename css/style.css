@@ -545,7 +545,7 @@ section {
         background: #fff;
         width: 100%;
         margin-top: 10px;
-        padding: auto;
+        padding: 15px;
         border-radius: 10px;
         box-shadow:0 5px 25px rgba(1, 1, 1, 15%)
     }
@@ -587,10 +587,17 @@ section {
          cursor: pointer;
          transition: .5s ease;
     }
-    .contact .content .row {
+    .contact .content .row:first-of-type{
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .contact .content .row:last-of-type{
         flex-wrap: nowrap;
         flex-direction: column;
         width: 100%;
+    }
+    .contact .card .info span{
+        font-size: 14px;
     }
     
 }
