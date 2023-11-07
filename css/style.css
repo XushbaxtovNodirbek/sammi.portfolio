@@ -17,6 +17,11 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 999;
+    transition: all .5s ease;
+}
+header.sticky{
+    background: crimson;
+    padding: 10px 100px;
 }
 header .brand {
     color: #fff;
@@ -37,7 +42,7 @@ header .navigation a {
     transition: color .5s ease;
 }
 header .navigation a:hover {
-    color: crimson;
+    color: #666;
 }
 section {
     padding: 100px;
@@ -475,6 +480,35 @@ section {
     header .navigation {
         display: none;
     }
+    header .navigation.active{
+        z-index: 888;
+        position: fixed;
+        background: #fff;
+        top: 0;
+        right: 0;
+        width: 35%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items:center;
+        flex-direction: column;
+        box-shadow:0 5px 25px rgba(1, 1, 1, 15%);
+        transition: .4s ease;
+    }
+    header .navigation a{
+        color:#000;
+        font-size: 22px;
+        margin: 10px;
+        padding: 0 20px;
+        border-radius: 20px;
+    }
+    header .navigation a:hover{
+        background: crimson;
+        color:#fff;
+    }
+    header.sticky{
+        padding: 10px 20px;
+    }
     .menu-btn{
         position: absolute ;
         background: url("/images/menu.png") no-repeat;
@@ -486,6 +520,14 @@ section {
         margin: 0 20px;
         cursor: pointer;
         transition: .4s ease;
+    }
+    .menu-btn.active {
+        z-index: 999;
+        background:url(/images/close.png) no-repeat;
+        background-size: 25px;
+        background-position:center;
+        filter: invert(1);
+        transition: .3s ease;
     }
     section{
         padding: 80px 20px;
@@ -600,4 +642,24 @@ section {
         font-size: 14px;
     }
     
+}
+.scrollToTop-btn{
+    z-index: 999;
+    position: fixed;
+    background: crimson;
+    right: 0;
+    color:#fff;
+    width: 45px;
+    height: 45px;
+    bottom: 10px;
+    font-size: 22px;
+    text-align: center;
+    cursor:pointer;
+    line-height: 45px;
+    border-radius: 3pc;
+    opacity: 0;
+}
+.scrollToTop-btn.active{
+    right: 20px;
+    opacity: 1;
 }
